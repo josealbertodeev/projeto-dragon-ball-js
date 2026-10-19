@@ -4,26 +4,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Semana do Zero ao Programador Contratado - Dragon Ball</title>
+    <title>Cyber Devs | Seletor de personagens</title>
+    <meta name="description"
+        content="Seletor de personagens com tema Dragon Ball e estética cyberpunk, feito com HTML, CSS e JavaScript puro.">
+    <meta name="author" content="José Alberto">
+
+    <meta property="og:title" content="Cyber Devs | Seletor de personagens">
+    <meta property="og:description"
+        content="Escolha um personagem e veja o tema da página mudar. Projeto em HTML, CSS e JavaScript puro.">
+    <meta property="og:image" content="./src/imagens/bg-cyberstorm.webp">
+    <meta property="og:type" content="website">
+
+    <link rel="icon" type="image/webp" href="./src/imagens/icone-cyberstorm.webp">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&family=Secular+One&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Rubik:wght@300..900&family=Secular+One&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="./src/css/reset.css">
-
     <link rel="stylesheet" href="./src/css/estilos.css">
-
     <link rel="stylesheet" href="./src/css/responsivo.css">
 </head>
 
 <body>
-    <main class="personagens">
-        <div class="personagem selecionado">
+    <h1 class="visualmente-oculto">Cyber Devs: seletor de personagens</h1>
+
+    <main class="personagens" aria-live="polite">
+        <article class="personagem" id="cyberstorm" hidden>
             <picture>
-                <source srcset="./src/imagens/bg-cyberstorm.png" media="(min-width: 768px)">
-                <img class="imagem" src="./src/imagens/bg-cyberstorm-mobile.png" alt="Personagem Cyberstorm">
+                <source srcset="./src/imagens/bg-cyberstorm.webp" media="(min-width: 768px)">
+                <img class="imagem" src="./src/imagens/bg-cyberstorm-mobile.webp" alt="Cyberstorm em sua estação de trabalho"
+                    fetchpriority="high">
             </picture>
             <div class="conteudo">
                 <h2 class="nome-personagem">Cyberstorm</h2>
@@ -32,11 +44,13 @@
                     reflexos rápidos, ele domina linguagens de programação como se fossem extensões de sua própria
                     mente.</p>
             </div>
-        </div>
-        <div class="personagem">
+        </article>
+
+        <article class="personagem" id="codepixie">
             <picture>
-                <source srcset="./src/imagens/bg-codepixie.png" media="(min-width: 768px)" />
-                <img class="imagem" src="./src/imagens/bg-codepixie-mobile.png" alt="Personagem CodePixie" />
+                <source srcset="./src/imagens/bg-codepixie.webp" media="(min-width: 768px)">
+                <img class="imagem" src="./src/imagens/bg-codepixie-mobile.webp" alt="CodePixie em sua estação de trabalho"
+                    fetchpriority="low">
             </picture>
             <div class="conteudo">
                 <h2 class="nome-personagem">CodePixie</h2>
@@ -44,41 +58,41 @@
                     desenvolvimento de algoritmos e inteligência artificial. Com um talento nato para decifrar padrões,
                     ela cria sistemas inovadores e protege dados sensíveis de ameaças digitais.</p>
             </div>
-        </div>
+        </article>
 
-        <div class="personagem">
+        <article class="personagem" id="hexblade" hidden>
             <picture>
-                <source srcset="./src/imagens/bg-hexblade.png" media="(min-width: 768px)" />
-                <img class="imagem" src="./src/imagens/bg-hexblade-mobile.png" alt="Personagem HexBlade" />
+                <source srcset="./src/imagens/bg-hexblade.webp" media="(min-width: 768px)">
+                <img class="imagem" src="./src/imagens/bg-hexblade-mobile.webp" alt="HexBlade em sua estação de trabalho"
+                    fetchpriority="low">
             </picture>
             <div class="conteudo">
                 <h2 class="nome-personagem">HexBlade</h2>
                 <p class="descricao">Ryo Tanaka, conhecido como "HexBlade", é um hacker habilidoso que opera nas sombras
-                    do
-                    ciberespaço. Mestre em engenharia reversa e criptografia, ele combina força bruta e inteligência
-                    afiada para
-                    quebrar firewalls impenetráveis.</p>
+                    do ciberespaço. Mestre em engenharia reversa e criptografia, ele combina força bruta e inteligência
+                    afiada para quebrar firewalls impenetráveis.</p>
             </div>
-        </div>
-        <div class="personagem">
+        </article>
+
+        <article class="personagem" id="neonpulse" hidden>
             <picture>
-                <source srcset="./src/imagens/bg-neonpulse.png" media="(min-width: 768px)" />
-                <img class="imagem" src="./src/imagens/bg-neonpulse-mobile.png" alt="Personagem NeonPulse" />
+                <source srcset="./src/imagens/bg-neonpulse.webp" media="(min-width: 768px)">
+                <img class="imagem" src="./src/imagens/bg-neonpulse-mobile.webp" alt="NeonPulse em sua estação de trabalho"
+                    fetchpriority="low">
             </picture>
             <div class="conteudo">
                 <h2 class="nome-personagem">NeonPulse</h2>
-                <p class="descricao">NeonPulse
-                    Ayla Vega, conhecida como "NeonPulse", é uma prodígio da programação espacial. Criada em uma estação
-                    orbital, ela domina
-                    linguagens de código como se fossem sua segunda língua. Especialista em inteligência artificial e
-                    segurança cibernética.</p>
+                <p class="descricao">Ayla Vega, conhecida como "NeonPulse", é uma prodígio da programação espacial.
+                    Criada em uma estação orbital, ela domina linguagens de código como se fossem sua segunda língua.
+                    Especialista em inteligência artificial e segurança cibernética.</p>
             </div>
-        </div>
+        </article>
 
-        <div class="personagem">
+        <article class="personagem" id="codebreaker" hidden>
             <picture>
-                <source srcset="./src/imagens/bg-codebreaker.png" media="(min-width: 768px)" />
-                <img class="imagem" src="./src/imagens/bg-codebreaker-mobile.png" alt="Personagem Codebreaker" />
+                <source srcset="./src/imagens/bg-codebreaker.webp" media="(min-width: 768px)">
+                <img class="imagem" src="./src/imagens/bg-codebreaker-mobile.webp" alt="Codebreaker em sua estação de trabalho"
+                    fetchpriority="low">
             </picture>
             <div class="conteudo">
                 <h2 class="nome-personagem">Codebreaker</h2>
@@ -86,38 +100,45 @@
                     cibernético, busca desvendar um código perdido há séculos. Dizem que esse código guarda o segredo
                     para uma tecnologia ancestral capaz de redefinir a inteligência artificial.</p>
             </div>
-        </div>
+        </article>
     </main>
-    <ul class="botoes">
-        <li>
-            <button class="botao cyberstorm selecionado">
-                <img src="./src/imagens/icone-cyberstorm.png" alt="Ícone Cyberstorm">
-            </button>
-        </li>
-        <li>
-            <button class="botao codepixie">
-                <img src="./src/imagens/icone-codepixie.png" alt="Ícone CodePixie" />
-            </button>
-        </li>
-        <li>
-            <button class="botao hexblade">
-                <img src="./src/imagens/icone-hexblade.png" alt="Ícone Hexblade" />
-            </button>
-        </li>
-        <li>
-            <button class="botao neonpulse">
-                <img src="./src/imagens/icone-neonpulse.png" alt="Ícone Neonpulse" />
-            </button>
-        </li>
-        <li>
-            <button class="botao codebreaker">
-                <img src="./src/imagens/icone-codebreaker.png" alt="Ícone Codebreaker" />
-            </button>
-        </li>
-    </ul>
 
-    <script src="./src/js/index.js"></script>
+    <nav aria-label="Escolha um personagem">
+        <ul class="botoes">
+            <li>
+                <button class="botao selecionado" data-personagem="codepixie" aria-controls="codepixie" aria-pressed="true"
+                    aria-label="CodePixie" style="--cor-destaque: #9747ff">
+                    <img src="./src/imagens/icone-codepixie.webp" alt="" width="90" height="90">
+                </button>
+            </li>
+            <li>
+                <button class="botao" data-personagem="cyberstorm" aria-controls="cyberstorm"
+                    aria-pressed="false" aria-label="Cyberstorm" style="--cor-destaque: #47ffc5">
+                    <img src="./src/imagens/icone-cyberstorm.webp" alt="" width="90" height="90">
+                </button>
+            </li>
+            <li>
+                <button class="botao" data-personagem="hexblade" aria-controls="hexblade" aria-pressed="false"
+                    aria-label="HexBlade" style="--cor-destaque: #ffa947">
+                    <img src="./src/imagens/icone-hexblade.webp" alt="" width="90" height="90">
+                </button>
+            </li>
+            <li>
+                <button class="botao" data-personagem="neonpulse" aria-controls="neonpulse" aria-pressed="false"
+                    aria-label="NeonPulse" style="--cor-destaque: #e4309a">
+                    <img src="./src/imagens/icone-neonpulse.webp" alt="" width="90" height="90">
+                </button>
+            </li>
+            <li>
+                <button class="botao" data-personagem="codebreaker" aria-controls="codebreaker" aria-pressed="false"
+                    aria-label="Codebreaker" style="--cor-destaque: #fff047">
+                    <img src="./src/imagens/icone-codebreaker.webp" alt="" width="90" height="90">
+                </button>
+            </li>
+        </ul>
+    </nav>
 
+    <script src="./src/js/index.js" defer></script>
 </body>
 
 </html>

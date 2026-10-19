@@ -14,12 +14,22 @@ main::after {
 }
 
 main .personagem {
-  display: none;
   height: 100vh;
+  animation: aparecer 0.4s ease;
 }
 
-main .personagem.selecionado {
-  display: block;
+main .personagem[hidden] {
+  display: none;
+}
+
+@keyframes aparecer {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
 main .personagem .imagem {
@@ -43,14 +53,14 @@ main .personagem .imagem {
 .conteudo .nome-personagem {
   color: #ffffff;
   font-size: 48px;
-  font-family: "Secular One";
+  font-family: "Secular One", sans-serif;
   font-weight: 400;
   margin-bottom: 20px;
 }
 
 .conteudo .descricao {
   color: #ffffff;
-  font-family: "Rubik";
+  font-family: "Rubik", sans-serif;
   font-size: 16px;
   line-height: 24px;
 }
@@ -80,30 +90,44 @@ main .personagem .imagem {
 }
 
 .botoes .botao img {
+  display: block;
+  width: 100%;
+  height: auto;
   border-radius: 50%;
 }
 
 .botoes .botao.selecionado {
   transform: scale(1.2);
-  box-shadow: 0 0 10px #d9d9d9;
+  box-shadow: 0 0 10px var(--cor-destaque, #d9d9d9);
 }
 
-.botoes .botao.cyberstorm.selecionado {
-  box-shadow: 0 0 10px #47ffc5;
+.botoes .botao:hover {
+  transform: scale(1.1);
 }
 
-.botoes .botao.codepixie.selecionado {
-  box-shadow: 0 0 10px #9747ff;
+.botoes .botao.selecionado:hover {
+  transform: scale(1.2);
 }
 
-.botoes .botao.hexblade.selecionado {
-  box-shadow: 0 0 10px #ffa947;
+.botoes .botao:focus-visible {
+  outline: 2px solid var(--cor-destaque, #ffffff);
+  outline-offset: 4px;
 }
 
-.botoes .botao.neonpulse.selecionado {
-  box-shadow: 0 0 10px #e4309a;
+.visualmente-oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
-.botoes .botao.codebreaker.selecionado {
-  box-shadow: 0 0 10px #fff047;
+@media (prefers-reduced-motion: reduce) {
+  main .personagem,
+  .botoes .botao {
+    animation: none;
+    transition: none;
+  }
 }
